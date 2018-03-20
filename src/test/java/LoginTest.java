@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,6 +20,7 @@ public class LoginTest {
 	@Test
 	public void doLogin() {
 		driver.get("http://gmail.com");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("identifierId")).sendKeys("djbasu2010@gmail.com");
 	}
 	
